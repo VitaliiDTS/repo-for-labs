@@ -13,18 +13,33 @@ class Book:
         self.number_of_sales = number_of_sales
 
     def get_price(self):
+        """
+        get price of book
+        """
         print(f"price of this book --> {self.price}")
 
     def get_number_of_pages(self):
+        """
+        get number of pages
+        """
         print(f"number of pages im this book --> {self.nuber_of_pages}")
 
     def get_author(self):
+        """
+        get author
+        """
         print(f"author of this book --> {self.author}")
 
     def get_quantity(self):
+        """
+        get quantity
+        """
         print(f"quantity --> {self.__quantity}")
 
     def get_number_of_sales(self):
+        """
+        get number of sales 
+        """
         print(f"number of sales --> {self.number_of_sales}")
 
     def __str__(self):
@@ -36,24 +51,42 @@ class BookShop:
         self.books = []
 
     def add_book(self, book):
+        """
+        add book to books
+        """
         self.books.append(book)
         print(f"book  was added")
 
     def remove_book(self, book):
+        """
+        remove book from books
+        """
         self.books.remove(book)
         print("book was removed")
 
     def sort_by_price_key(self , book):
+        """
+        key
+        """
         return book.price
 
     def top_books_by_price(self, n):
+        """
+        show top books by price 
+        """
         sorted_books = sorted(self.books, key = self.sort_by_price_key  ,  reverse=True)
         return sorted_books[:n]
 
     def sort_by_sales_key(self , book):
+        """
+        key
+        """
         return book.number_of_sales
 
     def top_books_by_sales(self, n):
+        """
+        show top books by sales
+        """
         sorted_books = sorted(self.books, key = self.sort_by_sales_key  ,  reverse=True)
         return sorted_books[:n]
 
